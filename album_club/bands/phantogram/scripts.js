@@ -93,20 +93,59 @@ function addAlbumDetails() {
 
 // Function to add track ratings to HTML
 function addTrackRatings() {
-    const trackRatings = album_results.track_ratings;
+  const trackRatings = album_results.track_ratings;
 
-    // Add track ratings to HTML
-    const trackRatingsList = document.getElementById('track-ratings');
-    trackRatings.forEach((track) => {
-        const trackName = track[0];
-        const trackRating = track[1];
+  // Get the table element
+  const table = document.getElementById('track-ratings');
 
-        const trackItem = document.createElement('li');
-        trackItem.classList.add('list-group-item');
-        trackItem.textContent = `${trackName}: ${trackRating.toFixed(2)}`;
+  // Loop through each track rating and create a row for it
+  trackRatings.forEach((track) => {
+    const trackName = track[0];
+    const trackRating = track[1];
 
-        trackRatingsList.appendChild(trackItem);
-    });
+    // Create a new row
+    const row = document.createElement('div');
+    row.classList.add('row');
+
+    // Create the track name column
+    const nameColumn = document.createElement('div');
+    nameColumn.classList.add('col-sm-4');
+    nameColumn.textContent = trackName;
+    row.appendChild(nameColumn);
+
+    // Create the track rating column
+    const ratingColumn = document.createElement('div');
+    ratingColumn.classList.add('col-sm-8');
+    // Create the progress div
+    const progressDiv = document.createElement('div');
+    progressDiv.classList.add('progress');
+
+    // Create the progress bar
+    const progressBar = document.createElement('div');
+    progressBar.classList.add('progress-bar');
+    progressBar.setAttribute('role', 'progressbar');
+    progressBar.setAttribute('aria-valuenow', trackRating % 25);
+    progressBar.setAttribute('aria-valuemin', '0');
+    progressBar.setAttribute('aria-valuemax', '100');
+    progressBar.style.width = `${trackRating * 25}%`;
+
+    // Create the progress bar text
+    const progressBarText = document.createElement('span');
+    progressBarText.textContent = trackRating.toFixed(2);
+
+    // Append the progress bar text to the progress bar
+    progressBar.appendChild(progressBarText);
+
+    // Append the progress bar to the progress div
+    progressDiv.appendChild(progressBar);
+
+    // Append the progress div to the rating column
+    ratingColumn.appendChild(progressDiv);
+    row.appendChild(ratingColumn);
+
+    // Append the row to the table
+    table.appendChild(row);
+  });
 }
 
     // Modify the addComments function to include newlines
