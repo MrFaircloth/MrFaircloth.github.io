@@ -128,6 +128,9 @@ function addTrackRatings() {
     progressBar.setAttribute('aria-valuemin', '0');
     progressBar.setAttribute('aria-valuemax', '100');
     progressBar.style.width = `${trackRating * 25}%`;
+    if (trackRating >= 3.5) {
+      progressBar.classList.add('bg-success');
+    }
 
     // Create the progress bar text
     const progressBarText = document.createElement('span');
