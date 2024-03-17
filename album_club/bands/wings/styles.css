@@ -1,0 +1,40 @@
+* {
+
+}
+
+.comment-container {
+    background-color: #ededed;
+}
+
+/* CSS */
+.circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 80%;
+    max-height: 250px;
+}
+
+.circle {
+    fill: none;
+    stroke: #007bff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 2;
+}
+
+@keyframes progress {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+}
+
+.circle-text {
+    fill: #444;
+    font-size: 0.3em;
+}
