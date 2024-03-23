@@ -1,0 +1,51 @@
+#album-cover img {
+    width: 90%;
+}
+
+#album-title {
+    margin-top: 50vh;
+    width: 100%;
+    font-family: Anton, sans-serif;
+    letter-spacing: 5px;
+}
+
+#album-title h1 {
+    font-size: 5em;
+}
+
+#album-title h3 {
+    font-size: 2em;
+}
+
+
+#intro {
+    background-image: url('artist_photos/couch.jpg'); 
+    height: 100vh;
+    background-position-x: center;
+    background-size: cover;
+    box-shadow: inset 0 -20px 20px 2px rgba(0, 0, 0, 0.5);
+}
+
+#intro #mask {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#navbar {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.track-rating {
+    text-decoration: none;
+    color: inherit;
+}
+
+.track-rating-users {
+    background-color: rgb(255, 237, 231);
+}

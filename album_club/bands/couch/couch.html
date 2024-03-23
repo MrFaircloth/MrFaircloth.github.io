@@ -1,0 +1,1099 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Couch</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link href="static/styles.css" rel="stylesheet">
+</head>
+<body>
+    
+
+<style>
+    .hide {
+        position: fixed; /* or absolute, depending on your layout */
+        top: -100px !important;
+        transition: top 0.5s;
+    }
+    .show {
+        top: 0 !important;
+        transition: top 0.5s;
+    }
+</style>
+
+<div id="navbar" class="top-0">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">Album Club</a>
+            <a class="nav-link" href="#">Place</a>
+            <a class="nav-link" href="#">Holder</a>
+            <a class="nav-link" href="#">Values</a>
+        </div>
+    </nav>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var lastScrollTop = 0;
+        var navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function() {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop < 0) return; // Ignore negative scroll positions
+            if (scrollTop > lastScrollTop) {
+                navbar.classList.remove('show');
+                navbar.classList.add('hide');
+            } else {
+                navbar.classList.remove('hide');
+                navbar.classList.add('show');
+            }
+            lastScrollTop = scrollTop;
+        });
+    });
+</script>
+<section id="intro" class="bg-image">
+    <div id="mask" class="d-flex align-items-center justify-content-center">
+        <div id="album-title" class="container text-center text-light">
+            <h1>COUCH</h1>
+            <h3>by Couch</h3>
+        </div>
+    </div>
+</section>
+<section id="album" class="d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div id="album-cover" class="col-md-6 p-2 text-center">
+                <img src="static/album_covers/couch-1000x.jpg" class="img-fluid" alt="Couch">
+            </div>
+            <div class="col-md-6 d-flex p-2 align-items-center">
+                <div>
+                    <h1>The Band</h1>
+                    <p>The self titled debute album COUCH EP, released in February 2021, was the product of long distance writing and recording over three years by a band scattered accross the country. They've since unified in Boston and are now on tour after their release of their latest EP, Sunshower.</p>
+                    <p>Their unique sound is a blend of Funk, Rock and R&B/Soul with expressive horns, synths and warm vocals.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="rating" class="container my-3">
+    <!-- Grouped Track Rating -->
+
+
+
+<style>
+    :root {
+        --val: 70.83333333333334;
+        --circ: calc(2 * pi * 5);
+        --cfill: calc(var(--val) * var(--circ) / 100);
+    }
+
+    .record-svg {
+        width: 100%;
+        height: 100%;
+        transform-origin: 50% 50%;
+        transform: rotate(-90deg);
+    }
+
+    .record-svg text{
+        transform-origin: 50% 50%;
+        transform: rotate(90deg);
+    }
+
+    svg text {
+        font-size: 0.4em;
+    }
+
+</style>
+
+
+<div class="d-flex justify-content-center position-relative my-3" style="width: 100%;">
+    <div class="rating-svg" style="width: 40%;">
+        <svg class="record-svg" width="20" height="20" viewBox="0 0 20 20">
+            <circle r="10" cx="10" cy="10" fill="lightgray"/>
+            <circle r="5" cx="10" cy="10" fill="transparent"
+                stroke="blue"
+                stroke-width="10"
+                stroke-dasharray="var(--cfill) var(--circ)"/>
+            <circle r="8" cx="10" cy="10" fill="white"/>
+        </svg>
+    </div>
+    <div class="rating-emoji position-absolute" style="font-size: 6rem; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        &#x1F44D
+    </div>
+</div>
+
+
+<div class="container track-ratings my-5">
+    
+        
+        <a class="track-rating" data-toggle="collapse" href="#track_track_still_feeling_you" role="button" aria-expanded="true" aria-controls="track_track_still_feeling_you">
+        
+            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Still Feeling You</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="3.3333333333333335" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 83.33333333333334%;"
+    >
+        <span>3.33</span>
+    </div>
+</div>
+        
+        </a>
+        
+        <div class="collapse" id="track_track_still_feeling_you">
+            <div id="track_still_feeling_you" class="card card-body track-rating-users">
+                <ul>
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Mitch F.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-success" 
+        role="progressbar" 
+        aria-valuenow="4.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 100.0%;"
+    >
+        <span>4.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Steve A.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-success" 
+        role="progressbar" 
+        aria-valuenow="4.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 100.0%;"
+    >
+        <span>4.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Big T.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-danger" 
+        role="progressbar" 
+        aria-valuenow="1.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 25.0%;"
+    >
+        <span>1.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Nick M.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-success" 
+        role="progressbar" 
+        aria-valuenow="4.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 100.0%;"
+    >
+        <span>4.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Kristie K.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-success" 
+        role="progressbar" 
+        aria-valuenow="4.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 100.0%;"
+    >
+        <span>4.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Eric D.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="3.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 75.0%;"
+    >
+        <span>3.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                </ul>
+            </div>
+        </div>
+    
+        
+        <a class="track-rating" data-toggle="collapse" href="#track_track_black_bear_lane" role="button" aria-expanded="true" aria-controls="track_track_black_bear_lane">
+        
+            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Black Bear Lane</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="2.6666666666666665" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 66.66666666666666%;"
+    >
+        <span>2.67</span>
+    </div>
+</div>
+        
+        </a>
+        
+        <div class="collapse" id="track_track_black_bear_lane">
+            <div id="track_black_bear_lane" class="card card-body track-rating-users">
+                <ul>
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Mitch F.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="3.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 75.0%;"
+    >
+        <span>3.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Steve A.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-danger" 
+        role="progressbar" 
+        aria-valuenow="1.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 25.0%;"
+    >
+        <span>1.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Big T.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-success" 
+        role="progressbar" 
+        aria-valuenow="4.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 100.0%;"
+    >
+        <span>4.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Nick M.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-success" 
+        role="progressbar" 
+        aria-valuenow="4.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 100.0%;"
+    >
+        <span>4.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Kristie K.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="3.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 75.0%;"
+    >
+        <span>3.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Eric D.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-danger" 
+        role="progressbar" 
+        aria-valuenow="1.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 25.0%;"
+    >
+        <span>1.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                </ul>
+            </div>
+        </div>
+    
+        
+        <a class="track-rating" data-toggle="collapse" href="#track_track_stand_up" role="button" aria-expanded="true" aria-controls="track_track_stand_up">
+        
+            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Stand Up</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="3.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 75.0%;"
+    >
+        <span>3.0</span>
+    </div>
+</div>
+        
+        </a>
+        
+        <div class="collapse" id="track_track_stand_up">
+            <div id="track_stand_up" class="card card-body track-rating-users">
+                <ul>
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Mitch F.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="3.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 75.0%;"
+    >
+        <span>3.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Steve A.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-success" 
+        role="progressbar" 
+        aria-valuenow="4.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 100.0%;"
+    >
+        <span>4.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Big T.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="3.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 75.0%;"
+    >
+        <span>3.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Nick M.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="3.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 75.0%;"
+    >
+        <span>3.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Kristie K.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="3.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 75.0%;"
+    >
+        <span>3.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Eric D.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-warning" 
+        role="progressbar" 
+        aria-valuenow="2.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 50.0%;"
+    >
+        <span>2.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                </ul>
+            </div>
+        </div>
+    
+        
+        <a class="track-rating" data-toggle="collapse" href="#track_track_like_before" role="button" aria-expanded="true" aria-controls="track_track_like_before">
+        
+            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Like Before</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="2.5" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 62.5%;"
+    >
+        <span>2.5</span>
+    </div>
+</div>
+        
+        </a>
+        
+        <div class="collapse" id="track_track_like_before">
+            <div id="track_like_before" class="card card-body track-rating-users">
+                <ul>
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Mitch F.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="3.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 75.0%;"
+    >
+        <span>3.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Steve A.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-danger" 
+        role="progressbar" 
+        aria-valuenow="1.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 25.0%;"
+    >
+        <span>1.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Big T.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-success" 
+        role="progressbar" 
+        aria-valuenow="4.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 100.0%;"
+    >
+        <span>4.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Nick M.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="3.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 75.0%;"
+    >
+        <span>3.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Kristie K.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-warning" 
+        role="progressbar" 
+        aria-valuenow="2.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 50.0%;"
+    >
+        <span>2.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Eric D.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-warning" 
+        role="progressbar" 
+        aria-valuenow="2.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 50.0%;"
+    >
+        <span>2.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                </ul>
+            </div>
+        </div>
+    
+        
+        <a class="track-rating" data-toggle="collapse" href="#track_track_fall_into_place" role="button" aria-expanded="true" aria-controls="track_track_fall_into_place">
+        
+            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Fall Into Place</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="2.6666666666666665" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 66.66666666666666%;"
+    >
+        <span>2.67</span>
+    </div>
+</div>
+        
+        </a>
+        
+        <div class="collapse" id="track_track_fall_into_place">
+            <div id="track_fall_into_place" class="card card-body track-rating-users">
+                <ul>
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Mitch F.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-success" 
+        role="progressbar" 
+        aria-valuenow="4.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 100.0%;"
+    >
+        <span>4.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Steve A.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-danger" 
+        role="progressbar" 
+        aria-valuenow="1.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 25.0%;"
+    >
+        <span>1.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Big T.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="3.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 75.0%;"
+    >
+        <span>3.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Nick M.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="3.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 75.0%;"
+    >
+        <span>3.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Kristie K.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar bg-warning" 
+        role="progressbar" 
+        aria-valuenow="2.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 50.0%;"
+    >
+        <span>2.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                    
+                        
+                            
+
+
+
+<div class="container mt-3 mb-0">
+    <p class="mb-0">Eric D.</p>
+</div>
+<div class="progress mb-3">
+    <div 
+        class="progress-bar " 
+        role="progressbar" 
+        aria-valuenow="3.0" 
+        aria-valuemin="0" 
+        aria-valuemax="4" 
+        style="width: 75.0%;"
+    >
+        <span>3.0</span>
+    </div>
+</div>
+                        
+                    
+                
+                </ul>
+            </div>
+        </div>
+    
+</div>
+</section>
+<section id="comments" class="container my-3">
+    <div class="comments container my-3">
+    
+    
+    
+    
+    <div class="comment container my-3 py-2">
+        <blockquote class="comment-text mb-0">
+            "I thought album was very hit or miss, i either loved the song or it wasn&#39;t for me"
+        </blockquote>
+        <p class="comment-user" style='text-align: right;'>
+            - Steve A.
+        </p>
+    </div>
+    
+    
+    
+    <div class="comment container my-3 py-2">
+        <blockquote class="comment-text mb-0">
+            "Whenever I listen to an album I try to figure out the vibe it gives off. Whether it’s an album made for driving, vibing, workout, etc. I’d say it definitely a vibe/driving album and I appreciate how mellow this album is and super easy for anyone to pick up"
+        </blockquote>
+        <p class="comment-user" style='text-align: right;'>
+            - Big T.
+        </p>
+    </div>
+    
+    
+    
+    <div class="comment container my-3 py-2">
+        <blockquote class="comment-text mb-0">
+            "Certifiable bangers. &#34;Still Feeling You&#34; is great, wasn&#39;t expecting to like it as much as I do and it&#39;s getting added to the main Playlist. The rest are fun, remind me a lot of broadway music."
+        </blockquote>
+        <p class="comment-user" style='text-align: right;'>
+            - Nick M.
+        </p>
+    </div>
+    
+    
+    
+    <div class="comment container my-3 py-2">
+        <blockquote class="comment-text mb-0">
+            "Very positive vibes across the board. Took me longer to get into some of the songs than I thought. But enjoyed starting my morning and some drives with some catchy songs. Just not my favorite favorite stuff. Did save one of the songs to my playlist. "
+        </blockquote>
+        <p class="comment-user" style='text-align: right;'>
+            - Kristie K.
+        </p>
+    </div>
+    
+    
+    
+    <div class="comment container my-3 py-2">
+        <blockquote class="comment-text mb-0">
+            "I just couldn&#39;t get in the groove of the EP. Whether I was working, walking, cooking, or running, it just didn&#39;t work for me. I just didn&#39;t think it was that diverse of an EP. Nothing was too exciting."
+        </blockquote>
+        <p class="comment-user" style='text-align: right;'>
+            - Eric D.
+        </p>
+    </div>
+    
+    
+</div>
+</section>
+<section id="submitter">
+    <div class="container">
+    <p> Submitted by: Mitch F.</p>
+    <p>I discovered this band on Instagram and something about the funk / soul like style really peaked my interest. That and put horns in anything and you've got my attention.</p>
+    <p>As the week went on, the EP really grew on me. After digging into the bands latest album "Sunshower" and watching some of their live performances, I really want to see them live as I feel like the energy would blow me away.</p>
+    <p>I'm not really confident in it being a hit with the group but I wanted to make sure my album choices would deviate us from our normal listening genres and I think Couch hits that mark.</p>
+</div>
+</section>
+<footer>
+    <div class="container my-3">
+        <p>&copy; 2021 Album Club</p>
+    </div>
+</footer>
+
+</body>
+</html>
